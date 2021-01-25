@@ -1,6 +1,17 @@
 Changelog
 ==========
 
+Version 6.8.4-beta *(2021-01-25)*
+---------------------------------
+
+ * Respects entries in .hidden files
+
+ 
+
+
+Upstream Changelog (Simple Mobile Tools)
+========================================
+
 Version 6.8.4 *(2021-01-16)*
 ----------------------------
 

@@ -46,11 +46,11 @@
 
     <!-- Strings displayed only on Google Play Store. Optional, but good to have -->
     <!-- App title has to have less than 50 characters. If you cannot squeeze it, just remove a part of it -->
-    <string name="app_title">Simple File Manager Pro - Manage files easy &amp; fast</string>
+    <string name="app_title">Tanooki File Manager - Manage files easy &amp; fast</string>
     <!-- Short description has to have less than 80 chars -->
     <string name="app_short_description">Easy app for managing your files without ads, respecting your privacy &amp; security</string>
     <string name="app_long_description">
-        A lightweight quick file manager for everyday use. It offers a userful search functionality, you can also customize the home folder and select favorite folders for quick access.
+        Tanooki File Manager is a fork of Simple File Manager, a lightweight quick file manager for everyday use. It offers a useful search functionality, you can also customize the home folder and select favorite folders for quick access.
 
         The app contains multiple powerful security related functions, like password protecting hidden items, deleting files, or the whole app. You can choose between using a pattern, pin, or a fingerprint to keep your data private.
 
@@ -72,17 +72,11 @@
 
         Contains no ads or unnecessary permissions. It is fully opensource, provides customizable colors.
 
-        <b>Check out the full suite of Simple Tools here:</b>
+        <b>Check out the original full suite of Simple Tools here:</b>
         https://www.simplemobiletools.com
 
-        <b>Standalone website of Simple File Manager Pro:</b>
+        <b>Standalone website of original Simple File Manager Pro:</b>
         https://www.simplemobiletools.com/filemanager
-
-        <b>Facebook:</b>
-        https://www.facebook.com/simplemobiletools
-
-        <b>Reddit:</b>
-        https://www.reddit.com/r/SimpleMobileTools
     </string>
 
     <!--

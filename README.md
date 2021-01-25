@@ -1,5 +1,7 @@
 # Tanooki File Manager
 
+*Tanooki File Manager* is a fork of [Tibor Kaputa](https://github.com/tibbi)'s [Simple File Manager](https://github.com/SimpleMobileTools/Simple-File-Manager) from his awesome [Simple Mobile Tools](https://www.simplemobiletools.com/). Almost all code was written by him. I accept donations, but pleaser consider donating to him as well.
+
 <img alt="Logo" src="fastlane/metadata/android/en-US/images/icon.png" width="120" />
 
 Aims to bring features Linux users are used to from their desktop experience to Android.
@@ -26,7 +28,3 @@ This app is just one piece of a bigger series of apps. You can find the rest of 
 <img alt="App image" src="fastlane/metadata/android/en-US/images/phoneScreenshots/app_2.jpg" width="30%">
 <img alt="App image" src="fastlane/metadata/android/en-US/images/phoneScreenshots/app_3.jpg" width="30%">
 </div>
-
-## Credits
-
-Forked from [SimpleMobileTools - Simple File Manager](https://github.com/SimpleMobileTools/Simple-File-Manager).
