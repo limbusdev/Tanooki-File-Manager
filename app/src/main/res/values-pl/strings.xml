@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Prosty Menedżer Plików</string>
-    <string name="app_launcher_name">Menedżer Plików</string>
     <string name="press_back_again">Naciśnij jeszcze raz, aby wyjść</string>
     <string name="go_to_home_folder">Przejdź do folderu głównego</string>
     <string name="set_as_home_folder">Ustaw jako folder główny</string>

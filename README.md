@@ -1,6 +1,6 @@
 # Tanooki File Manager
 
-*Tanooki File Manager* is a fork of [Tibor Kaputa](https://github.com/tibbi)'s [Simple File Manager](https://github.com/SimpleMobileTools/Simple-File-Manager) from his awesome [Simple Mobile Tools](https://www.simplemobiletools.com/). Almost all code was written by him. I accept donations, but pleaser consider donating to him as well.
+*Tanooki File Manager* is a fork of [Tibor Kaputa](https://github.com/tibbi)'s [Simple File Manager](https://github.com/SimpleMobileTools/Simple-File-Manager) and [Simple Commons](https://github.com/SimpleMobileTools/Simple-Commons) from his awesome [Simple Mobile Tools](https://www.simplemobiletools.com/). Almost all code was written by him. I accept donations, but pleaser consider donating to him as well.
 
 <img alt="Logo" src="fastlane/metadata/android/en-US/images/icon.png" width="120" />
 
