@@ -1,6 +1,24 @@
 Changelog
 ==========
 
+Version 6.8.6-tanooki *(2021-03-03)*
+---------------------------------
+----------------------------
+
+ * Rebased on upstream repository
+
+Version 6.8.4-tanooki *(2021-01-25)*
+---------------------------------
+----------------------------
+
+ * Respects entries in .hidden files
+
+ 
+
+
+Upstream Changelog (Simple Mobile Tools)
+========================================
+
 Version 6.8.6 *(2021-02-12)*
 ----------------------------
 
