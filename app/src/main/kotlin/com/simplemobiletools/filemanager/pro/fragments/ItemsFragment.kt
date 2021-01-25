@@ -29,7 +29,10 @@ import com.simplemobiletools.filemanager.pro.helpers.RootHelpers
 import com.simplemobiletools.filemanager.pro.interfaces.ItemOperationsListener
 import com.simplemobiletools.filemanager.pro.models.ListItem
 import kotlinx.android.synthetic.main.items_fragment.view.*
+import java.io.BufferedReader
 import java.io.File
+import java.io.FileInputStream
+import java.io.InputStreamReader
 import java.util.*
 import kotlin.collections.ArrayList
 
@@ -144,6 +147,7 @@ class ItemsFragment : Fragment(), ItemOperationsListener, Breadcrumbs.Breadcrumb
 
         scrollStates[currentPath] = getScrollState()!!
         currentPath = realPath
+
         showHidden = context!!.config.shouldShowHidden
         getItems(currentPath) { originalPath, listItems ->
             if (currentPath != originalPath || !isAdded) {
@@ -160,6 +164,24 @@ class ItemsFragment : Fragment(), ItemOperationsListener, Breadcrumbs.Breadcrumb
                 }
             }
         }
+    }
+
+    private fun getDotHiddenEntries( path: String ) : List<String> {
+        val hiddenEntries = arrayListOf<String?>();
+        val filename = "$path/.hidden"
+        val dotHidden = File( filename )
+        if ( context != null && dotHidden.exists() && filename.toString() != null && filename.toString().trim() != "") {
+            var fileInputStream = FileInputStream( filename )
+            var inputStreamReader = InputStreamReader(fileInputStream)
+            val bufferedReader = BufferedReader(inputStreamReader)
+            var text: String? = null
+            while ({ text = bufferedReader.readLine(); text }() != null) {
+                if (text != null)
+                    hiddenEntries.add(text);
+            }
+        }
+
+        return hiddenEntries.filterNotNull();
     }
 
     private fun addItems(items: ArrayList<ListItem>, forceRefresh: Boolean = false) {
@@ -228,8 +250,9 @@ class ItemsFragment : Fragment(), ItemOperationsListener, Breadcrumbs.Breadcrumb
     }
 
     private fun getRegularItemsOf(path: String, callback: (originalPath: String, items: ArrayList<ListItem>) -> Unit) {
+        val hiddenEntries = getDotHiddenEntries( currentPath )
         val items = ArrayList<ListItem>()
-        val files = File(path).listFiles()?.filterNotNull()
+        val files = File(path).listFiles()?.filterNotNull()?.filter { file -> !hiddenEntries.contains( file.name ) }
         if (context == null || files == null) {
             callback(path, items)
             return
