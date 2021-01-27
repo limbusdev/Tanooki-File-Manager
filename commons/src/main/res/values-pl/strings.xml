@@ -668,7 +668,7 @@
     <!-- About -->
     <string name="about">O aplikacji</string>
     <string name="website_label">Nasza strona internetowa:</string>
-    <string name="email_label">Napisz do nas, przyślij nam swoje uwagi:</string>
+    <string name="feedback_label">Napisz do nas, przyślij nam swoje uwagi:</string>
     <string name="upgrade_to_pro">Zaktualizuj do wersji Pro</string>
     <string name="more_apps_underlined"><u>Więcej aplikacji</u></string>
     <string name="more_apps_from_us_underlined"><u>Więcej naszych aplikacji</u></string>

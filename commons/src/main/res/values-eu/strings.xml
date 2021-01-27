@@ -641,7 +641,7 @@
     <!-- About -->
     <string name="about">Honi buruz</string>
     <string name="website_label">Iturburu-kodeak ikusteko joan hona:</string>
-    <string name="email_label">Bidali zure iritziak edo iradokizunak hona:</string>
+    <string name="feedback_label">Bidali zure iritziak edo iradokizunak hona:</string>
     <string name="upgrade_to_pro">Pro-ra aldatu</string>
     <string name="more_apps_underlined"><u>Aplikazio gehiago</u></string>
     <string name="more_apps_from_us_underlined"><u>Gure aplikazio gehiago</u></string>

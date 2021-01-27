@@ -607,7 +607,7 @@
     <!-- About -->
     <string name="about">このアプリについて</string>
     <string name="website_label">ソースコードはこちら</string>
-    <string name="email_label">ご意見やご提案をお送りください</string>
+    <string name="feedback_label">ご意見やご提案をお送りください</string>
     <string name="upgrade_to_pro">Pro版にアップグレード</string>
     <string name="more_apps_underlined"><u>他のアプリ</u></string>
     <string name="more_apps_from_us_underlined"><u>当社の他のアプリ</u></string>

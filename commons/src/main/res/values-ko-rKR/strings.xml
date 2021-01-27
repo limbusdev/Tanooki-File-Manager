@@ -606,7 +606,7 @@
     <!-- About -->
     <string name="about">앱 정보</string>
     <string name="website_label">소스코드 공개 링크</string>
-    <string name="email_label">피드백 또는 제안 요청</string>
+    <string name="feedback_label">피드백 또는 제안 요청</string>
     <string name="upgrade_to_pro">Pro버전으로 업데이트</string>
     <string name="more_apps_underlined"><u>앱 더보기</u></string>
     <string name="more_apps_from_us_underlined"><u>More apps from us</u></string>

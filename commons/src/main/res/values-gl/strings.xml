@@ -641,7 +641,7 @@
     <!-- About -->
     <string name="about">Acerca de</string>
     <string name="website_label">Máis aplicativos sinxelos e código fonte en</string>
-    <string name="email_label">Envía os teus comentarios ou suxerencias a</string>
+    <string name="feedback_label">Envía os teus comentarios ou suxerencias a</string>
     <string name="upgrade_to_pro">Actualiza a Pro</string>
     <string name="more_apps_underlined"><u>Máis aplicativos</u></string>
     <string name="more_apps_from_us_underlined"><u>Máis aplicativos nosos</u></string>

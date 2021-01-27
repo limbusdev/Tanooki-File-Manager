@@ -608,7 +608,7 @@
     <!-- About -->
     <string name="about">关于</string>
     <string name="website_label">应用源码</string>
-    <string name="email_label">发送反馈</string>
+    <string name="feedback_label">发送反馈</string>
     <string name="upgrade_to_pro">升级到专业版</string>
     <string name="more_apps_underlined"><u>更多应用</u></string>
     <string name="more_apps_from_us_underlined"><u>我们的其他应用</u></string>

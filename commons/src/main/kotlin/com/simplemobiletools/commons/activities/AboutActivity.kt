@@ -37,15 +37,14 @@ class AboutActivity : BaseSimpleActivity() {
         updateTextColors(about_holder)
 
         setupWebsite()
-        setupEmail()
+        setupFeedback()
         setupFAQ()
         setupUpgradeToPro()
         setupMoreApps()
         setupRateUs()
         setupInvite()
         setupLicense()
-        setupFacebook()
-        setupReddit()
+        setupGitHub()
         setupCopyright()
     }
 
@@ -59,16 +58,16 @@ class AboutActivity : BaseSimpleActivity() {
         about_website.text = websiteText
     }
 
-    private fun setupEmail() {
-        val label = getString(R.string.email_label)
-        val email = getString(R.string.my_email)
+    private fun setupFeedback() {
+        val label = getString(R.string.feedback_label)
+        val feedback = getString(R.string.feedback)
 
         val appVersion = String.format(getString(R.string.app_version, intent.getStringExtra(APP_VERSION_NAME)))
         val deviceOS = String.format(getString(R.string.device_os), Build.VERSION.RELEASE)
         val newline = "%0D%0A"
         val separator = "------------------------------"
         val body = "$appVersion$newline$deviceOS$newline$separator$newline$newline"
-        val href = "$label<br><a href=\"mailto:$email?subject=$appName&body=$body\">$email</a>"
+        val href = "$label<br><a href=\"mailto:$feedback?subject=$appName&body=$body\">$feedback</a>"
         about_email.text = Html.fromHtml(href)
 
         if (intent.getBooleanExtra(SHOW_FAQ_BEFORE_MAIL, false) && !baseConfig.wasBeforeAskingShown) {
@@ -181,22 +180,10 @@ class AboutActivity : BaseSimpleActivity() {
         about_license.setTextColor(linkColor)
     }
 
-    private fun setupFacebook() {
-        about_facebook.setOnClickListener {
-            var link = "https://www.facebook.com/simplemobiletools"
-            try {
-                packageManager.getPackageInfo("com.facebook.katana", 0)
-                link = "fb://page/150270895341774"
-            } catch (ignored: Exception) {
-            }
-
+    private fun setupGitHub() {
+        about_github.setOnClickListener {
+            var link = "https://github.com/limbusdev/Tanooki-File-Manager"
             launchViewIntent(link)
-        }
-    }
-
-    private fun setupReddit() {
-        about_reddit.setOnClickListener {
-            launchViewIntent("https://www.reddit.com/r/SimpleMobileTools")
         }
     }
 

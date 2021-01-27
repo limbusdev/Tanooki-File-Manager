@@ -641,7 +641,7 @@
     <!-- About -->
     <string name="about">Over</string>
     <string name="website_label">Bezoek voor de broncode</string>
-    <string name="email_label">Stuur reacties of suggesties naar</string>
+    <string name="feedback_label">Stuur reacties of suggesties naar</string>
     <string name="upgrade_to_pro">Upgraden naar Pro-versie</string>
     <string name="more_apps_underlined"><u>Meer apps</u></string>
     <string name="more_apps_from_us_underlined"><u>Meer apps van ons</u></string>
