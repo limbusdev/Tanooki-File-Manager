@@ -765,7 +765,7 @@
     <!-- About -->
     <string name="about">Ynghylch</string>
     <string name="website_label">Am y ffynonellau, gweler</string>
-    <string name="email_label">Anfona dy adborth neu awgrymiadau at</string>
+    <string name="feedback_label">Anfona dy adborth neu awgrymiadau at</string>
     <string name="upgrade_to_pro">Uwchraddio i Pro</string>
     <string name="more_apps_underlined"><u>Rhagor o apiau</u></string>
     <string name="more_apps_from_us_underlined"><u>More apps from us</u></string>

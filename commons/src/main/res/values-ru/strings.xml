@@ -675,7 +675,7 @@
     <!-- About -->
     <string name="about">О приложении</string>
     <string name="website_label">Исходный код можно найти по адресу</string>
-    <string name="email_label">Отправить отзывы или предложения</string>
+    <string name="feedback_label">Отправить отзывы или предложения</string>
     <string name="upgrade_to_pro">Обновить до Pro</string>
     <string name="more_apps_underlined"><u>Другие простые приложения</u></string>
     <string name="more_apps_from_us_underlined"><u>Другие наши приложения</u></string>

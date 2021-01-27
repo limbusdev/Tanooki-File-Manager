@@ -641,7 +641,7 @@
     <!-- About -->
     <string name="about">Om</string>
     <string name="website_label">For at se kildekoden besøg</string>
-    <string name="email_label">Send feedback og forslag til</string>
+    <string name="feedback_label">Send feedback og forslag til</string>
     <string name="upgrade_to_pro">Opgrader til Pro</string>
     <string name="more_apps_underlined"><u>Flere apps</u></string>
     <string name="more_apps_from_us_underlined"><u>Flere apps fra os</u></string>

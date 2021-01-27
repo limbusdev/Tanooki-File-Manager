@@ -608,7 +608,7 @@
     <!-- About -->
     <string name="about">Tentang</string>
     <string name="website_label">Untuk kode sumber kunjungi</string>
-    <string name="email_label">Kirim umpanbalik atau saran ke</string>
+    <string name="feedback_label">Kirim umpanbalik atau saran ke</string>
     <string name="upgrade_to_pro">Tingkatkan ke Pro</string>
     <string name="more_apps_underlined"><u>Aplikasi lainnya</u></string>
     <string name="more_apps_from_us_underlined"><u>More apps from us</u></string>

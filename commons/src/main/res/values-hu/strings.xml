@@ -640,7 +640,7 @@
     <!-- About -->
     <string name="about">Névjegy</string>
     <string name="website_label">A forráskódok megtekintéséhez</string>
-    <string name="email_label">Küldje el visszajelzését vagy javaslatait</string>
+    <string name="feedback_label">Küldje el visszajelzését vagy javaslatait</string>
     <string name="upgrade_to_pro">Frissítés Pro verzióra</string>
     <string name="more_apps_underlined"><u>További alkalmazások</u></string>
     <string name="more_apps_from_us_underlined"><u>More apps from us</u></string>

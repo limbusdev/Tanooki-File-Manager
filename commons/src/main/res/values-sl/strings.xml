@@ -706,7 +706,7 @@
     <!-- About -->
     <string name="about">O aplikaciji</string>
     <string name="website_label">Za izvorno kodo obiščite</string>
-    <string name="email_label">"Svoje predloge in povratne informacije pošljite na "</string>
+    <string name="feedback_label">"Svoje predloge in povratne informacije pošljite na "</string>
     <string name="upgrade_to_pro">Nadgradi na Pro</string>
     <string name="more_apps_underlined"><u>Več aplikacij</u></string>
     <string name="more_apps_from_us_underlined"><u>More apps from us</u></string>

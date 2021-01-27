@@ -641,7 +641,7 @@
     <!-- About -->
     <string name="about">Hakkında</string>
     <string name="website_label">Kaynak kodları için ziyaret edin</string>
-    <string name="email_label">Görüşlerinizi veya önerilerinizi şuraya gönderin:</string>
+    <string name="feedback_label">Görüşlerinizi veya önerilerinizi şuraya gönderin:</string>
     <string name="upgrade_to_pro">Pro\'ya Yükselt</string>
     <string name="more_apps_underlined"><u>Daha fazla uygulama</u></string>
     <string name="more_apps_from_us_underlined"><u>Diğer uygulamalarımız</u></string>

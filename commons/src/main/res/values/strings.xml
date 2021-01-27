@@ -641,10 +641,10 @@
     <!-- About -->
     <string name="about">About</string>
     <string name="website_label">For the source code visit</string>
-    <string name="email_label">Send your feedback or suggestions to</string>
+    <string name="feedback_label">Enter your feedback or suggestions at</string>
     <string name="upgrade_to_pro">Get original Simple File Manager Pro</string>
     <string name="more_apps_underlined"><u>More apps</u></string>
-    <string name="more_apps_from_us_underlined"><u>More apps of the Simple Mobile Tools app suite</u></string>
+    <string name="more_apps_from_us_underlined"><u>Tanooki File Manager is forked from Simple Mobile Tools File Manager. Click to see that whole app suite.</u></string>
     <string name="third_party_licences_underlined"><u>Third party licences</u></string>
     <string name="invite_friends_underlined"><u>Invite friends</u></string>
     <string name="share_text">Hey, come check out %1$s at %2$s</string>
@@ -803,8 +803,8 @@
     <string name="notice">This app uses the following third party libraries to make my life easier. Thank you.</string>
     <string name="third_party_licences">Third party licences</string>
     <string name="kotlin_title">Kotlin (programming language)</string>
-    <string name="smt_file_manager_title">SimpleMobileTools - File Manager (origin of this fork)</string>
-    <string name="smt_commons_title">SimpleMobileTools - Commons (origin of this fork)</string>
+    <string name="smt_file_manager_title" translatable="false">SimpleMobileTools - File Manager (origin of this fork)</string>
+    <string name="smt_commons_title" translatable="false">SimpleMobileTools - Commons (origin of this fork)</string>
     <string name="subsampling_title">Subsampling Scale Image View (zoomable imageviews)</string>
     <string name="glide_title">Glide (image loading and caching)</string>
     <string name="picasso_title">Picasso (image loading and caching)</string>

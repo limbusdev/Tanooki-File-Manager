@@ -675,7 +675,7 @@
     <!-- About -->
     <string name="about">O aplikaci</string>
     <string name="website_label">Pro zdrojové kódy navštivte</string>
-    <string name="email_label">Zpětnou vazbu či návrhy zasílejte na</string>
+    <string name="feedback_label">Zpětnou vazbu či návrhy zasílejte na</string>
     <string name="upgrade_to_pro">Stáhnout Pro verzi</string>
     <string name="more_apps_underlined"><u>Více aplikací</u></string>
     <string name="more_apps_from_us_underlined"><u>Více aplikací od nás</u></string>

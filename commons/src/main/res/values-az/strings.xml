@@ -641,7 +641,7 @@
     <!-- About -->
     <string name="about">Haqqında</string>
     <string name="website_label">Kök koda keçiş üçün</string>
-    <string name="email_label">Geri dönüş və tövsiyələrinizi göndərin</string>
+    <string name="feedback_label">Geri dönüş və tövsiyələrinizi göndərin</string>
     <string name="upgrade_to_pro">Upgrade to Pro</string>
     <string name="more_apps_underlined"><u>Daha çox tətbiq</u></string>
     <string name="more_apps_from_us_underlined"><u>More apps from us</u></string>

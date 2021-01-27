@@ -641,7 +641,7 @@
     <!-- About -->
     <string name="about">Sobre</string>
     <string name="website_label">Més aplicacions senzilles i codi font a</string>
-    <string name="email_label">Envia els teus comentaris o suggeriments a</string>
+    <string name="feedback_label">Envia els teus comentaris o suggeriments a</string>
     <string name="upgrade_to_pro">Actualitza a pro</string>
     <string name="more_apps_underlined"><u>Més aplicacions</u></string>
     <string name="more_apps_from_us_underlined"><u>Més aplicacions nostres</u></string>

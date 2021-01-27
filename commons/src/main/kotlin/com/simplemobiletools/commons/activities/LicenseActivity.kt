@@ -27,6 +27,7 @@ class LicenseActivity : BaseSimpleActivity() {
         val inflater = LayoutInflater.from(this)
         val licenses = initLicenses()
         val licenseMask = intent.getIntExtra(APP_LICENSES, 0) or LICENSE_KOTLIN
+        var counter = 1
         licenses.filter { licenseMask and it.id != 0 }.forEach {
             val license = it
             inflater.inflate(R.layout.license_faq_item, null).apply {
@@ -41,7 +42,7 @@ class LicenseActivity : BaseSimpleActivity() {
 
                 license_faq_text.text = getString(license.textId)
                 license_faq_text.setTextColor(textColor)
-                licenses_holder.addView(this)
+                licenses_holder.addView(this, counter++)
             }
         }
     }
@@ -53,8 +54,6 @@ class LicenseActivity : BaseSimpleActivity() {
 
     private fun initLicenses() = arrayOf(
             License(LICENSE_KOTLIN, R.string.kotlin_title, R.string.kotlin_text, R.string.kotlin_url),
-            License(LICENSE_SIMPLEMOBILETOOLS_FILE_MANAGER, R.string.smt_file_manager_title, R.string.smt_file_manager_text, R.string.smt_file_manager_url ),
-            License(LICENSE_SIMPLEMOBILETOOLS_COMMONS, R.string.smt_commons_title, R.string.smt_commons_text, R.string.smt_commons_url ),
             License(LICENSE_SUBSAMPLING, R.string.subsampling_title, R.string.subsampling_text, R.string.subsampling_url),
             License(LICENSE_GLIDE, R.string.glide_title, R.string.glide_text, R.string.glide_url),
             License(LICENSE_CROPPER, R.string.cropper_title, R.string.cropper_text, R.string.cropper_url),
@@ -82,6 +81,8 @@ class LicenseActivity : BaseSimpleActivity() {
             License(LICENSE_EVENT_BUS, R.string.event_bus_title, R.string.event_bus_text, R.string.event_bus_url),
             License(LICENSE_AUDIO_RECORD_VIEW, R.string.audio_record_view_title, R.string.audio_record_view_text, R.string.audio_record_view_url),
             License(LICENSE_SMS_MMS, R.string.sms_mms_title, R.string.sms_mms_text, R.string.sms_mms_url),
-            License(LICENSE_APNG, R.string.apng_title, R.string.apng_text, R.string.apng_url)
-    )
+            License(LICENSE_APNG, R.string.apng_title, R.string.apng_text, R.string.apng_url),
+            License(LICENSE_SIMPLEMOBILETOOLS_FILE_MANAGER, R.string.smt_file_manager_title, R.string.smt_file_manager_text, R.string.smt_file_manager_url ),
+            License(LICENSE_SIMPLEMOBILETOOLS_COMMONS, R.string.smt_commons_title, R.string.smt_commons_text, R.string.smt_commons_url )
+            )
 }

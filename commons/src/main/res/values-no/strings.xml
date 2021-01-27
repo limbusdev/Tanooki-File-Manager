@@ -641,7 +641,7 @@
     <!-- About -->
     <string name="about">Om</string>
     <string name="website_label">For the source codes visit</string>
-    <string name="email_label">Send your feedback or suggestions to</string>
+    <string name="feedback_label">Send your feedback or suggestions to</string>
     <string name="upgrade_to_pro">Upgrade to Pro</string>
     <string name="more_apps_underlined"><u>More apps</u></string>
     <string name="more_apps_from_us_underlined"><u>More apps from us</u></string>

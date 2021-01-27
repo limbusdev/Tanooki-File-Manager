@@ -26,8 +26,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/about_website"
-            android:text="@string/my_email"
-            android:textColorLink="@color/color_primary"/>
+            android:text="@string/feedback"
+            android:textColorLink="@color/color_primary" />
 
         <com.simplemobiletools.commons.views.MyTextView
             android:id="@+id/about_faq_label"
@@ -106,31 +106,22 @@
             android:text="@string/follow_us"/>
 
         <ImageView
-            android:id="@+id/about_facebook"
+            android:id="@+id/about_github"
             android:layout_width="@dimen/social_logo"
             android:layout_height="@dimen/social_logo"
             android:layout_below="@+id/about_follow_us"
             android:src="@drawable/ic_facebook_vector"/>
 
-        <ImageView
-            android:id="@+id/about_reddit"
-            android:layout_width="@dimen/social_logo"
-            android:layout_height="@dimen/social_logo"
-            android:layout_below="@+id/about_follow_us"
-            android:layout_marginLeft="@dimen/medium_margin"
-            android:layout_marginRight="@dimen/medium_margin"
-            android:layout_toEndOf="@+id/about_facebook"
-            android:src="@drawable/ic_reddit_vector"/>
 
         <com.simplemobiletools.commons.views.MyTextView
             android:id="@+id/about_copyright"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_below="@+id/about_facebook"
+            android:layout_below="@+id/about_github"
             android:layout_alignParentBottom="true"
             android:gravity="center_horizontal|bottom"
             android:paddingTop="@dimen/activity_margin"
-            android:text="v1.0\nCopyright © Simple Mobile Tools 2017"/>
+            android:text="v1.0\nCopyright © limbusdev 2021"/>
 
     </RelativeLayout>
 </ScrollView>

@@ -641,7 +641,7 @@
     <!-- About -->
     <string name="about">Σχετικά</string>
     <string name="website_label">Για τον κώδικα επισκεφθείτε</string>
-    <string name="email_label">Στείλτε τα σχόλιά σας ή τις προτάσεις σας</string>
+    <string name="feedback_label">Στείλτε τα σχόλιά σας ή τις προτάσεις σας</string>
     <string name="upgrade_to_pro">Αναβάθμιση στην Pro</string>
     <string name="more_apps_underlined"><u>Περισσότερες εφαρμογές</u></string>
     <string name="more_apps_from_us_underlined"><u>Περισσότερες εφαρμογές από εμάς</u></string>

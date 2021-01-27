@@ -665,7 +665,7 @@
     <!-- About -->
     <string name="about">Apie</string>
     <string name="website_label">Pirminį kodą rasite</string>
-    <string name="email_label">Siųskite atsiliepimus ar pasiūlymus adresu</string>
+    <string name="feedback_label">Siųskite atsiliepimus ar pasiūlymus adresu</string>
     <string name="upgrade_to_pro">Upgrade to Pro</string>
     <string name="more_apps_underlined"><u>Daugiau programėlių</u></string>
     <string name="more_apps_from_us_underlined"><u>More apps from us</u></string>
