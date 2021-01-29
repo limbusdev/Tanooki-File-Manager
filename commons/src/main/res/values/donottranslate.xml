@@ -11,8 +11,10 @@
 
     <!-- About -->
     <string name="two_string_placeholder">%1$s%2$s</string>
-    <string name="my_website">\nhttps://limbusdev.github.io/</string>
+    <string name="my_website">https://limbusdev.github.io/</string>
+    <string name="link_source">https://github.com/limbusdev/Tanooki-File-Manager/</string>
     <string name="feedback">https://github.com/limbusdev/Tanooki-File-Manager/</string>
+    <string name="link_faq"></string>
 
     <!-- License -->
     <string name="smt_file_manager_text">Copyright 2016 – 2021 SimpleMobileTools\n\nLicensed under GPLv3 (read it below).\n\n</string>

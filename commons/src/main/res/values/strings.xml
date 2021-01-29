@@ -640,13 +640,14 @@
 
     <!-- About -->
     <string name="about">About</string>
-    <string name="website_label">For the source code visit</string>
-    <string name="feedback_label">Enter your feedback or suggestions at</string>
+    <string name="label_source" translatable="false">Tanooki File Manager is a fork of Simple File Manager from the Simple Mobile Tools app suite. Like its origin it is open source and licensed under GPLv3. Inspect the source code on GitHub:</string>
+    <string name="label_website" translatable="false">Visit me at my website:</string>
+    <string name="label_feedback" translatable="false">Feel free to enter feedback and suggestions in the repository\'s issue tracker.</string>
     <string name="upgrade_to_pro">Get original Simple File Manager Pro</string>
-    <string name="more_apps_underlined"><u>More apps</u></string>
-    <string name="more_apps_from_us_underlined"><u>Tanooki File Manager is forked from Simple Mobile Tools File Manager. Click to see that whole app suite.</u></string>
+    <string name="more_apps_underlined" translatable="false"><u>More apps</u></string>
+    <string name="more_apps_from_us_underlined" translatable="false"><u>Tanooki File Manager is forked from Simple File Manager. See the whole Simple Mobile Tools app suite:</u></string>
     <string name="third_party_licences_underlined"><u>Third party licences</u></string>
-    <string name="invite_friends_underlined"><u>Invite friends</u></string>
+    <string name="label_share" translatable="false"><u>Share</u></string>
     <string name="share_text">Hey, come check out %1$s at %2$s</string>
     <string name="invite_via">Invite via</string>
     <string name="rate_us_underlined"><u>Rate us</u></string>
@@ -731,7 +732,7 @@
 
     <!-- FAQ -->
     <string name="frequently_asked_questions">Frequently asked questions</string>
-    <string name="before_asking_question">Before you ask a question, please first read the</string>
+    <string name="before_asking_question">Before you ask a question, please first read the FAQ:</string>
     <string name="faq_1_title_commons">How come I don\'t see this apps widget on the list of widgets?</string>
     <string name="faq_1_text_commons">It is most likely because you moved the app on an SD card. There is an Android system limitation which hides the given app widgets
         in that case. The only solution is to move the app back onto the Internal Storage via your device settings.</string>

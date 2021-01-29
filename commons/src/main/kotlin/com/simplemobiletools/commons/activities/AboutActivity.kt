@@ -1,19 +1,11 @@
 package com.simplemobiletools.commons.activities
 
 import android.content.Intent
-import android.os.Build
 import android.os.Bundle
-import android.text.Html
-import android.text.method.LinkMovementMethod
 import android.view.Menu
-import android.view.View
 import com.simplemobiletools.commons.R
-import com.simplemobiletools.commons.dialogs.ConfirmationAdvancedDialog
-import com.simplemobiletools.commons.dialogs.ConfirmationDialog
-import com.simplemobiletools.commons.dialogs.RateStarsDialog
 import com.simplemobiletools.commons.extensions.*
 import com.simplemobiletools.commons.helpers.*
-import com.simplemobiletools.commons.models.FAQItem
 import kotlinx.android.synthetic.main.activity_about.*
 import java.util.*
 
@@ -36,15 +28,9 @@ class AboutActivity : BaseSimpleActivity() {
         super.onResume()
         updateTextColors(about_holder)
 
-        setupWebsite()
-        setupFeedback()
-        setupFAQ()
-        setupUpgradeToPro()
         setupMoreApps()
-        setupRateUs()
-        setupInvite()
+        setupShare()
         setupLicense()
-        setupGitHub()
         setupCopyright()
     }
 
@@ -53,82 +39,15 @@ class AboutActivity : BaseSimpleActivity() {
         return super.onCreateOptionsMenu(menu)
     }
 
-    private fun setupWebsite() {
-        val websiteText = String.format(getString(R.string.two_string_placeholder), getString(R.string.website_label), getString(R.string.my_website))
-        about_website.text = websiteText
-    }
-
-    private fun setupFeedback() {
-        val label = getString(R.string.feedback_label)
-        val feedback = getString(R.string.feedback)
-
-        val appVersion = String.format(getString(R.string.app_version, intent.getStringExtra(APP_VERSION_NAME)))
-        val deviceOS = String.format(getString(R.string.device_os), Build.VERSION.RELEASE)
-        val newline = "%0D%0A"
-        val separator = "------------------------------"
-        val body = "$appVersion$newline$deviceOS$newline$separator$newline$newline"
-        val href = "$label<br><a href=\"mailto:$feedback?subject=$appName&body=$body\">$feedback</a>"
-        about_email.text = Html.fromHtml(href)
-
-        if (intent.getBooleanExtra(SHOW_FAQ_BEFORE_MAIL, false) && !baseConfig.wasBeforeAskingShown) {
-            about_email.setOnClickListener {
-                baseConfig.wasBeforeAskingShown = true
-                about_email.movementMethod = LinkMovementMethod.getInstance()
-                about_email.setOnClickListener(null)
-                val msg = "${getString(R.string.before_asking_question_read_faq)}\n\n${getString(R.string.make_sure_latest)}"
-                ConfirmationDialog(this, msg, 0, R.string.read_faq, R.string.skip) {
-                    about_faq_label.performClick()
-                }
-            }
-        } else {
-            about_email.movementMethod = LinkMovementMethod.getInstance()
-        }
-    }
-
-    private fun setupFAQ() {
-        val faqItems = intent.getSerializableExtra(APP_FAQ) as ArrayList<FAQItem>
-        about_faq_label.beVisibleIf(faqItems.isNotEmpty())
-        about_faq_label.setOnClickListener {
-            openFAQ(faqItems)
-        }
-
-        about_faq.beVisibleIf(faqItems.isNotEmpty())
-        about_faq.setOnClickListener {
-            openFAQ(faqItems)
-        }
-
-        about_faq.setTextColor(linkColor)
-        about_faq.underlineText()
-    }
-
-    private fun setupUpgradeToPro() {
-        about_upgrade_to_pro.beVisibleIf(getCanAppBeUpgraded())
-        about_upgrade_to_pro.setOnClickListener {
-            launchUpgradeToProIntent()
-        }
-
-        about_upgrade_to_pro.setTextColor(linkColor)
-        about_upgrade_to_pro.underlineText()
-    }
-
-    private fun openFAQ(faqItems: ArrayList<FAQItem>) {
-        Intent(applicationContext, FAQActivity::class.java).apply {
-            putExtra(APP_ICON_IDS, getAppIconIDs())
-            putExtra(APP_LAUNCHER_NAME, getAppLauncherName())
-            putExtra(APP_FAQ, faqItems)
-            startActivity(this)
-        }
-    }
-
     private fun setupMoreApps() {
-        about_more_apps.setOnClickListener {
+        about_link_more_apps.setOnClickListener {
             launchViewIntent("https://play.google.com/store/apps/dev?id=9070296388022589266")
         }
-        about_more_apps.setTextColor(linkColor)
+        about_link_more_apps.setTextColor(linkColor)
     }
 
-    private fun setupInvite() {
-        about_invite.setOnClickListener {
+    private fun setupShare() {
+        about_share.setOnClickListener {
             val text = String.format(getString(R.string.share_text), appName, getStoreUrl())
             Intent().apply {
                 action = Intent.ACTION_SEND
@@ -138,34 +57,7 @@ class AboutActivity : BaseSimpleActivity() {
                 startActivity(Intent.createChooser(this, getString(R.string.invite_via)))
             }
         }
-        about_invite.setTextColor(linkColor)
-    }
-
-    private fun setupRateUs() {
-        if (baseConfig.appRunCount < 5) {
-            about_rate_us.visibility = View.GONE
-        } else {
-            about_rate_us.setOnClickListener {
-                if (baseConfig.wasBeforeRateShown) {
-                    if (baseConfig.wasAppRated) {
-                        redirectToRateUs()
-                    } else {
-                        RateStarsDialog(this)
-                    }
-                } else {
-                    baseConfig.wasBeforeRateShown = true
-                    val msg = "${getString(R.string.before_rate_read_faq)}\n\n${getString(R.string.make_sure_latest)}"
-                    ConfirmationAdvancedDialog(this, msg, 0, R.string.read_faq, R.string.skip) {
-                        if (it) {
-                            about_faq_label.performClick()
-                        } else {
-                            about_rate_us.performClick()
-                        }
-                    }
-                }
-            }
-        }
-        about_rate_us.setTextColor(linkColor)
+        about_share.setTextColor(linkColor)
     }
 
     private fun setupLicense() {
@@ -178,13 +70,6 @@ class AboutActivity : BaseSimpleActivity() {
             }
         }
         about_license.setTextColor(linkColor)
-    }
-
-    private fun setupGitHub() {
-        about_github.setOnClickListener {
-            var link = "https://github.com/limbusdev/Tanooki-File-Manager"
-            launchViewIntent(link)
-        }
     }
 
     private fun setupCopyright() {
