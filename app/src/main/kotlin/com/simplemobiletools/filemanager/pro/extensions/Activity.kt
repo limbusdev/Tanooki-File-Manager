@@ -1,6 +1,7 @@
 package com.simplemobiletools.filemanager.pro.extensions
 
 import android.app.Activity
+import android.content.Context
 import android.content.Intent
 import android.net.Uri
 import androidx.core.content.FileProvider
@@ -10,7 +11,10 @@ import com.simplemobiletools.commons.extensions.*
 import com.simplemobiletools.commons.helpers.isNougatPlus
 import com.simplemobiletools.filemanager.pro.BuildConfig
 import com.simplemobiletools.filemanager.pro.helpers.*
+import java.io.BufferedReader
 import java.io.File
+import java.io.FileInputStream
+import java.io.InputStreamReader
 import java.util.*
 
 fun Activity.sharePaths(paths: ArrayList<String>) {
@@ -65,16 +69,62 @@ fun BaseSimpleActivity.toggleItemVisibility(oldPath: String, hide: Boolean, call
         return
     }
 
-    filename = if (hide) {
-        ".${filename.trimStart('.')}"
+    val hiddenEntries = getDotHiddenEntries(path);
+
+    if (hide) {
+        // Add filename to .hidden
+        if (hiddenEntries.contains(filename))
+            return;
+
     } else {
-        filename.substring(1, filename.length)
+        // Remove filename from .hidden
+        if (!hiddenEntries.contains(filename))
+            return;
     }
 
-    val newPath = "$path/$filename"
-    if (oldPath != newPath) {
-        renameFile(oldPath, newPath) {
-            callback?.invoke(newPath)
+    val newHiddenEntries = arrayListOf<String>()
+
+    for (entry in hiddenEntries) {
+        if (entry != filename) {
+            newHiddenEntries.add(entry)
         }
     }
+
+    if (hide) {
+        newHiddenEntries.add(filename)
+    }
+
+    val stringBuilder = StringBuilder()
+    for (entry in newHiddenEntries) {
+        stringBuilder.append(entry)
+        stringBuilder.append("\n")
+    }
+
+    // Write new .hidden
+    val hiddenFileName = "$path/.hidden"
+    val dotHidden = File(hiddenFileName)
+
+    if (!dotHidden.exists())
+        dotHidden.createNewFile()
+
+    dotHidden.writeText(stringBuilder.toString())
+}
+
+private fun getDotHiddenEntries( path: String ) : List<String> {
+    val hiddenEntries = arrayListOf<String?>();
+    val filename = "$path/.hidden"
+    val dotHidden = File( filename )
+    if ( dotHidden.exists() && filename != null && filename.trim() != "") {
+        var fileInputStream = FileInputStream( filename )
+        var inputStreamReader = InputStreamReader(fileInputStream)
+        val bufferedReader = BufferedReader(inputStreamReader)
+        var text: String? = null
+        while ({ text = bufferedReader.readLine(); text }() != null) {
+            if (text != null)
+                hiddenEntries.add(text);
+        }
+        fileInputStream.close()
+    }
+
+    return hiddenEntries.filterNotNull();
 }
