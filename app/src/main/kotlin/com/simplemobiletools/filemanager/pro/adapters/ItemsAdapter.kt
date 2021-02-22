@@ -8,6 +8,7 @@ import android.content.Intent
 import android.content.pm.PackageManager
 import android.content.pm.ShortcutInfo
 import android.content.pm.ShortcutManager
+import android.graphics.Typeface
 import android.graphics.drawable.Drawable
 import android.graphics.drawable.Icon
 import android.graphics.drawable.LayerDrawable
@@ -763,6 +764,10 @@ class ItemsAdapter(activity: SimpleActivity, var listItems: MutableList<ListItem
                     item_name.beVisibleIf(displayFilenamesInGrid)
                 } else {
                     item_name.beVisible()
+                }
+
+                if(listItem.isHidden) {
+                    item_name.setTypeface(null, Typeface.ITALIC)
                 }
 
                 if (listItem.isDirectory) {
