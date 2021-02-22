@@ -147,7 +147,6 @@ class ItemsFragment : Fragment(), ItemOperationsListener, Breadcrumbs.Breadcrumb
 
         scrollStates[currentPath] = getScrollState()!!
         currentPath = realPath
-
         showHidden = context!!.config.shouldShowHidden
         getItems(currentPath) { originalPath, listItems ->
             if (currentPath != originalPath || !isAdded) {
@@ -252,7 +251,7 @@ class ItemsFragment : Fragment(), ItemOperationsListener, Breadcrumbs.Breadcrumb
     private fun getRegularItemsOf(path: String, callback: (originalPath: String, items: ArrayList<ListItem>) -> Unit) {
         val hiddenEntries = getDotHiddenEntries( currentPath )
         val items = ArrayList<ListItem>()
-        val files = File(path).listFiles()?.filterNotNull()?.filter { file -> !hiddenEntries.contains( file.name ) }
+        val files = File(path).listFiles()?.filterNotNull()
         if (context == null || files == null) {
             callback(path, items)
             return
@@ -263,8 +262,8 @@ class ItemsFragment : Fragment(), ItemOperationsListener, Breadcrumbs.Breadcrumb
         val lastModifieds = context!!.getFolderLastModifieds(path)
 
         for (file in files) {
-            val fileDirItem = getFileDirItemFromFile(file, isSortingBySize, lastModifieds, getProperChildCount)
-            if (fileDirItem != null) {
+            val fileDirItem = getFileDirItemFromFile(file, isSortingBySize, lastModifieds, getProperChildCount, hiddenEntries)
+                if (fileDirItem != null) {
                 items.add(fileDirItem)
             }
         }
@@ -272,10 +271,10 @@ class ItemsFragment : Fragment(), ItemOperationsListener, Breadcrumbs.Breadcrumb
         callback(path, items)
     }
 
-    private fun getFileDirItemFromFile(file: File, isSortingBySize: Boolean, lastModifieds: HashMap<String, Long>, getProperChildCount: Boolean): ListItem? {
+    private fun getFileDirItemFromFile(file: File, isSortingBySize: Boolean, lastModifieds: HashMap<String, Long>, getProperChildCount: Boolean, hiddenEntries: List<String>): ListItem? {
         val curPath = file.absolutePath
         val curName = file.name
-        if (!showHidden && curName.startsWith(".")) {
+        if (!showHidden && (curName.startsWith(".") || hiddenEntries.contains( curName ))) {
             return null
         }
 
@@ -419,7 +418,7 @@ class ItemsFragment : Fragment(), ItemOperationsListener, Breadcrumbs.Breadcrumb
         File(path).listFiles()?.sortedBy { it.isDirectory }?.forEach {
             if (it.isDirectory) {
                 if (it.name.contains(text, true)) {
-                    val fileDirItem = getFileDirItemFromFile(it, isSortingBySize, HashMap<String, Long>(), false)
+                    val fileDirItem = getFileDirItemFromFile(it, isSortingBySize, HashMap<String, Long>(), false, listOf())
                     if (fileDirItem != null) {
                         files.add(fileDirItem)
                     }
@@ -428,7 +427,7 @@ class ItemsFragment : Fragment(), ItemOperationsListener, Breadcrumbs.Breadcrumb
                 files.addAll(searchFiles(text, it.absolutePath))
             } else {
                 if (it.name.contains(text, true)) {
-                    val fileDirItem = getFileDirItemFromFile(it, isSortingBySize, HashMap<String, Long>(), false)
+                    val fileDirItem = getFileDirItemFromFile(it, isSortingBySize, HashMap<String, Long>(), false, listOf())
                     if (fileDirItem != null) {
                         files.add(fileDirItem)
                     }
