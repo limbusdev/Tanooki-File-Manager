@@ -182,8 +182,8 @@ class ItemsAdapter(activity: SimpleActivity, var listItems: MutableList<ListItem
     private fun checkHideBtnVisibility(menu: Menu) {
         var hiddenCnt = 0
         var unhiddenCnt = 0
-        getSelectedFileDirItems().map { it.name }.forEach {
-            if (it.startsWith(".")) {
+        getSelectedListItems().forEach {
+            if (it.name.startsWith(".") || it.isHidden ) {
                 hiddenCnt++
             } else {
                 unhiddenCnt++
@@ -682,6 +682,8 @@ class ItemsAdapter(activity: SimpleActivity, var listItems: MutableList<ListItem
     private fun getFirstSelectedItemPath() = getSelectedFileDirItems().first().path
 
     private fun getSelectedFileDirItems() = listItems.filter { selectedKeys.contains(it.path.hashCode()) } as ArrayList<FileDirItem>
+
+    private fun getSelectedListItems() = listItems.filter { selectedKeys.contains(it.path.hashCode()) }
 
     fun updateItems(newItems: ArrayList<ListItem>, highlightText: String = "") {
         if (newItems.hashCode() != currentItemsHash) {
