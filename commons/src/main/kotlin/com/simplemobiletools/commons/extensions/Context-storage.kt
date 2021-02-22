@@ -352,7 +352,7 @@ fun Context.updateLastModified(path: String, lastModified: Long) {
     }
 }
 
-fun Context.getOTGItems(path: String, shouldShowHidden: Boolean, getProperFileSize: Boolean, callback: (ArrayList<FileDirItem>) -> Unit) {
+fun Context.getOTGItems(path: String, shouldShowHidden: Boolean, getProperFileSize: Boolean, hiddenEntries: List<String>, callback: (ArrayList<FileDirItem>) -> Unit) {
     val items = ArrayList<FileDirItem>()
     val OTGTreeUri = baseConfig.OTGTreeUri
     var rootUri = try {
@@ -391,7 +391,8 @@ fun Context.getOTGItems(path: String, shouldShowHidden: Boolean, getProperFileSi
     val basePath = "${baseConfig.OTGTreeUri}/document/${baseConfig.OTGPartition}%3A"
     for (file in files) {
         val name = file.name
-        if (!shouldShowHidden && name!!.startsWith(".")) {
+        val isHidden = name!!.startsWith(".") || hiddenEntries.contains(name);
+        if (!shouldShowHidden && isHidden) {
             continue
         }
 
