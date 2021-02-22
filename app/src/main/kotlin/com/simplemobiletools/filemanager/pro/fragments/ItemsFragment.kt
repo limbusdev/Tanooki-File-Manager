@@ -272,8 +272,8 @@ class ItemsFragment : Fragment(), ItemOperationsListener, Breadcrumbs.Breadcrumb
     private fun getFileDirItemFromFile(file: File, isSortingBySize: Boolean, lastModifieds: HashMap<String, Long>, getProperChildCount: Boolean, hiddenEntries: List<String>): ListItem? {
         val curPath = file.absolutePath
         val curName = file.name
-        val isHidden = hiddenEntries.contains( curName )
-        if (!showHidden && (curName.startsWith(".") || isHidden)) {
+        val isHidden = hiddenEntries.contains( curName ) || curName.startsWith(".")
+        if (!showHidden && isHidden) {
             return null
         }
 
