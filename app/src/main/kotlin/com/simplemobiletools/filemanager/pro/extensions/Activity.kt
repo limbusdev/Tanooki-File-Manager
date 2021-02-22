@@ -64,7 +64,7 @@ fun Activity.setAs(path: String) {
 fun BaseSimpleActivity.toggleItemVisibility(oldPath: String, hide: Boolean, callback: ((newPath: String) -> Unit)? = null) {
     val path = oldPath.getParentPath()
     var filename = oldPath.getFilenameFromPath()
-    if ((hide && filename.startsWith('.')) || (!hide && !filename.startsWith('.'))) {
+    if (hide && filename.startsWith('.')) {
         callback?.invoke(oldPath)
         return
     }
