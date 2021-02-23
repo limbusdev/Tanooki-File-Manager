@@ -8,13 +8,12 @@ import androidx.core.content.FileProvider
 import com.simplemobiletools.commons.R
 import com.simplemobiletools.commons.activities.BaseSimpleActivity
 import com.simplemobiletools.commons.extensions.*
+import com.simplemobiletools.commons.helpers.PERMISSION_WRITE_STORAGE
 import com.simplemobiletools.commons.helpers.isNougatPlus
 import com.simplemobiletools.filemanager.pro.BuildConfig
 import com.simplemobiletools.filemanager.pro.helpers.*
-import java.io.BufferedReader
-import java.io.File
-import java.io.FileInputStream
-import java.io.InputStreamReader
+import kotlinx.android.synthetic.main.activity_read_text.*
+import java.io.*
 import java.util.*
 
 fun Activity.sharePaths(paths: ArrayList<String>) {
@@ -61,6 +60,10 @@ fun Activity.setAs(path: String) {
     setAsIntent(path, BuildConfig.APPLICATION_ID)
 }
 
+private fun saveTextContent(outputStream: OutputStream?, content: String) {
+    outputStream?.bufferedWriter()?.use { it.write(content) }
+}
+
 fun BaseSimpleActivity.toggleItemVisibility(oldPath: String, hide: Boolean, callback: ((newPath: String) -> Unit)? = null) {
     val path = oldPath.getParentPath()
     var filename = oldPath.getFilenameFromPath()
@@ -102,12 +105,15 @@ fun BaseSimpleActivity.toggleItemVisibility(oldPath: String, hide: Boolean, call
 
     // Write new .hidden
     val hiddenFileName = "$path/.hidden"
-    val dotHidden = File(hiddenFileName)
 
-    if (!dotHidden.exists())
-        dotHidden.createNewFile()
-
-    dotHidden.writeText(stringBuilder.toString())
+    handlePermission(PERMISSION_WRITE_STORAGE) {
+        if (it) {
+            val dotHidden = File(hiddenFileName)
+            getFileOutputStream(dotHidden.toFileDirItem(this), true) { outputStream ->
+                saveTextContent(outputStream, stringBuilder.toString())
+            }
+        }
+    }
 }
 
 private fun getDotHiddenEntries( path: String ) : List<String> {
