@@ -2,7 +2,7 @@
 
 *Tanooki File Manager* is a fork of [Tibor Kaputa](https://github.com/tibbi)'s [Simple File Manager](https://github.com/SimpleMobileTools/Simple-File-Manager) and [Simple Commons](https://github.com/SimpleMobileTools/Simple-Commons) from his awesome [Simple Mobile Tools](https://www.simplemobiletools.com/). Almost all code was written by him. I accept donations, but pleaser consider donating to him as well.
 
-<img alt="Logo" src="distribution/icon.png" width="128" />
+<img alt="Logo" src="distribution/logo.png" width="128" />
 
 Aims to bring features Linux users are used to from their desktop experience to Android.
 
