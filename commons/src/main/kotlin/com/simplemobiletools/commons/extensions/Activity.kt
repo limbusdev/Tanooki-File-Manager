@@ -1,6 +1,7 @@
 package com.simplemobiletools.commons.extensions
 
 import android.app.Activity
+import android.app.TimePickerDialog
 import android.content.*
 import android.content.pm.ApplicationInfo
 import android.content.pm.PackageManager
@@ -602,9 +603,18 @@ fun BaseSimpleActivity.deleteFileBg(fileDirItem: FileDirItem, allowDeleteFolder:
 
     var fileDeleted = !isPathOnOTG(path) && ((!file.exists() && file.length() == 0L) || file.delete())
     if (fileDeleted) {
-        deleteFromMediaStore(path)
-        runOnUiThread {
-            callback?.invoke(true)
+        deleteFromMediaStore(path) { needsRescan ->
+            if (needsRescan) {
+                rescanAndDeletePath(path) {
+                    runOnUiThread {
+                        callback?.invoke(true)
+                    }
+                }
+            } else {
+                runOnUiThread {
+                    callback?.invoke(true)
+                }
+            }
         }
     } else {
         if (getIsPathDirectory(file.absolutePath) && allowDeleteFolder) {
@@ -921,10 +931,11 @@ fun Activity.setupDialogStuff(view: View, dialog: AlertDialog, titleId: Int = 0,
         return
     }
 
+    val adjustedPrimaryColor = getAdjustedPrimaryColor()
     if (view is ViewGroup)
         updateTextColors(view)
     else if (view is MyTextView) {
-        view.setColors(baseConfig.textColor, getAdjustedPrimaryColor(), baseConfig.backgroundColor)
+        view.setColors(baseConfig.textColor, adjustedPrimaryColor, baseConfig.backgroundColor)
     }
 
     var title: TextView? = null
@@ -946,9 +957,9 @@ fun Activity.setupDialogStuff(view: View, dialog: AlertDialog, titleId: Int = 0,
         setCustomTitle(title)
         setCanceledOnTouchOutside(true)
         show()
-        getButton(AlertDialog.BUTTON_POSITIVE).setTextColor(baseConfig.textColor)
-        getButton(AlertDialog.BUTTON_NEGATIVE).setTextColor(baseConfig.textColor)
-        getButton(AlertDialog.BUTTON_NEUTRAL).setTextColor(baseConfig.textColor)
+        getButton(AlertDialog.BUTTON_POSITIVE).setTextColor(adjustedPrimaryColor)
+        getButton(AlertDialog.BUTTON_NEGATIVE).setTextColor(adjustedPrimaryColor)
+        getButton(AlertDialog.BUTTON_NEUTRAL).setTextColor(adjustedPrimaryColor)
 
         val bgDrawable = resources.getColoredDrawableWithColor(R.drawable.dialog_bg, baseConfig.backgroundColor)
         window?.setBackgroundDrawable(bgDrawable)
@@ -956,13 +967,13 @@ fun Activity.setupDialogStuff(view: View, dialog: AlertDialog, titleId: Int = 0,
     callback?.invoke()
 }
 
-fun Activity.showPickSecondsDialogHelper(curMinutes: Int, isSnoozePicker: Boolean = false, showSecondsAtCustomDialog: Boolean = false,
+fun Activity.showPickSecondsDialogHelper(curMinutes: Int, isSnoozePicker: Boolean = false, showSecondsAtCustomDialog: Boolean = false, showDuringDayOption: Boolean = false,
                                          cancelCallback: (() -> Unit)? = null, callback: (seconds: Int) -> Unit) {
-    val seconds = if (curMinutes > 0) curMinutes * 60 else curMinutes
-    showPickSecondsDialog(seconds, isSnoozePicker, showSecondsAtCustomDialog, cancelCallback, callback)
+    val seconds = if (curMinutes == -1) curMinutes else curMinutes * 60
+    showPickSecondsDialog(seconds, isSnoozePicker, showSecondsAtCustomDialog, showDuringDayOption, cancelCallback, callback)
 }
 
-fun Activity.showPickSecondsDialog(curSeconds: Int, isSnoozePicker: Boolean = false, showSecondsAtCustomDialog: Boolean = false,
+fun Activity.showPickSecondsDialog(curSeconds: Int, isSnoozePicker: Boolean = false, showSecondsAtCustomDialog: Boolean = false, showDuringDayOption: Boolean = false,
                                    cancelCallback: (() -> Unit)? = null, callback: (seconds: Int) -> Unit) {
     hideKeyboard()
     val seconds = TreeSet<Int>()
@@ -993,13 +1004,25 @@ fun Activity.showPickSecondsDialog(curSeconds: Int, isSnoozePicker: Boolean = fa
 
     items.add(RadioItem(-2, getString(R.string.custom)))
 
+    if (showDuringDayOption) {
+        items.add(RadioItem(-3, getString(R.string.during_day_at_hh_mm)))
+    }
+
     RadioGroupDialog(this, items, selectedIndex, showOKButton = isSnoozePicker, cancelCallback = cancelCallback) {
-        if (it == -2) {
-            CustomIntervalPickerDialog(this, showSeconds = showSecondsAtCustomDialog) {
-                callback(it)
+        when (it) {
+            -2 -> {
+                CustomIntervalPickerDialog(this, showSeconds = showSecondsAtCustomDialog) {
+                    callback(it)
+                }
             }
-        } else {
-            callback(it as Int)
+            -3 -> {
+                TimePickerDialog(this, getDialogTheme(),
+                    { view, hourOfDay, minute -> callback(hourOfDay * -3600 + minute * -60) },
+                    curSeconds / 3600, curSeconds % 3600, baseConfig.use24HourFormat).show()
+            }
+            else -> {
+                callback(it as Int)
+            }
         }
     }
 }
@@ -1007,16 +1030,13 @@ fun Activity.showPickSecondsDialog(curSeconds: Int, isSnoozePicker: Boolean = fa
 fun BaseSimpleActivity.getAlarmSounds(type: Int, callback: (ArrayList<AlarmSound>) -> Unit) {
     val alarms = ArrayList<AlarmSound>()
     val manager = RingtoneManager(this)
-    manager.setType(if (type == ALARM_SOUND_TYPE_NOTIFICATION) RingtoneManager.TYPE_NOTIFICATION else RingtoneManager.TYPE_ALARM)
+    manager.setType(type)
 
     try {
         val cursor = manager.cursor
         var curId = 1
         val silentAlarm = AlarmSound(curId++, getString(R.string.no_sound), SILENT)
         alarms.add(silentAlarm)
-
-        val defaultAlarm = getDefaultAlarmSound(type)
-        alarms.add(defaultAlarm)
 
         while (cursor.moveToNext()) {
             val title = cursor.getString(RingtoneManager.TITLE_COLUMN_INDEX)

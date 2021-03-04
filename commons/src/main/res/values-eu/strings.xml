@@ -213,6 +213,8 @@
     <string name="background_color">Hondoaren kolorea</string>
     <string name="text_color">Testuaren kolorea</string>
     <string name="primary_color">Kolore nagusia</string>
+    <string name="accent_color_white">Accent color of white theme</string>
+    <string name="accent_color_black_and_white">Accent color of Black &amp; White theme</string>
     <string name="foreground_color">Aurreko planoaren kolorea</string>
     <string name="app_icon_color">Aplikazioaren ikonoaren kolorea</string>
     <string name="bottom_navigation_bar_color">Beheko nabigazio-barraren kolorea</string>
@@ -243,6 +245,7 @@
     <string name="dark_theme">Iluna</string>
     <string name="solarized">Eguzkitsua</string>
     <string name="dark_red">Gorri iluna</string>
+    <string name="white">White</string>
     <string name="black_white">Zuri-beltza</string>
     <string name="custom">Pertsonalizatuta</string>
     <string name="shared">Partekatuta</string>
@@ -275,6 +278,7 @@
     <string name="view_contact_details">Ikusi kontaktuaren xehetasunak</string>
     <string name="call_from_sim_1">Deitu 1. SIMetik</string>
     <string name="call_from_sim_2">Deitu 2. SIMetik</string>
+    <string name="toggle_filename">Aldatu fitxategi-izenaren ikusgaitasuna</string>
 
     <!-- Sorting -->
     <string name="sort_by">Ordenatze-irizpidea</string>
@@ -483,6 +487,8 @@
     <string name="your_sounds">Zure soinuak</string>
     <string name="add_new_sound">Gehitu soinu berria</string>
     <string name="no_sound">Soinurik ez</string>
+    <string name="during_day_at_hh_mm">During the day at hh:mm</string>
+    <string name="during_day_at">During the day at %02d:%02d</string>
 
     <!-- Settings -->
     <string name="settings">Ezarpenak</string>

@@ -213,6 +213,8 @@
     <string name="background_color">Háttérszín</string>
     <string name="text_color">Szöveg színe</string>
     <string name="primary_color">Elsődleges szín</string>
+    <string name="accent_color_white">Accent color of white theme</string>
+    <string name="accent_color_black_and_white">Accent color of Black &amp; White theme</string>
     <string name="foreground_color">Előtér szín</string>
     <string name="app_icon_color">Alkalmazás ikon színe</string>
     <string name="bottom_navigation_bar_color">Alsó navigációs sáv színe</string>
@@ -242,6 +244,7 @@
     <string name="dark_theme">Sötét</string>
     <string name="solarized">Kiégetett</string>
     <string name="dark_red">Sötét és piros</string>
+    <string name="white">White</string>
     <string name="black_white">Fekete és fehér</string>
     <string name="custom">Egyéni</string>
     <string name="shared">Megosztva</string>
@@ -274,6 +277,7 @@
     <string name="view_contact_details">View contact details</string>
     <string name="call_from_sim_1">Call from SIM 1</string>
     <string name="call_from_sim_2">Call from SIM 2</string>
+    <string name="toggle_filename">Fájlnév láthatóság módosítása</string>
 
     <!-- Sorting -->
     <string name="sort_by">Rendezés</string>
@@ -482,6 +486,8 @@
     <string name="your_sounds">Saját hangok</string>
     <string name="add_new_sound">Új hang hozzáadása</string>
     <string name="no_sound">Nincs hang</string>
+    <string name="during_day_at_hh_mm">During the day at hh:mm</string>
+    <string name="during_day_at">During the day at %02d:%02d</string>
 
     <!-- Settings -->
     <string name="settings">Beállítások</string>

@@ -213,6 +213,8 @@
     <string name="background_color">Fono spalva</string>
     <string name="text_color">Teksto spalva</string>
     <string name="primary_color">Pirminė spalva</string>
+    <string name="accent_color_white">Accent color of white theme</string>
+    <string name="accent_color_black_and_white">Accent color of Black &amp; White theme</string>
     <string name="foreground_color">Priekinio plano spalva</string>
     <string name="app_icon_color">Programėlės ikonėlės spalva</string>
     <string name="bottom_navigation_bar_color">Apatinio skydelio spalva</string>
@@ -243,6 +245,7 @@
     <string name="dark_theme">Tamsi</string>
     <string name="solarized">Soliarizuota</string>
     <string name="dark_red">Tamsiai raudona</string>
+    <string name="white">White</string>
     <string name="black_white">Juoda ir balta</string>
     <string name="custom">Pasirinktinė</string>
     <string name="shared">Bendra</string>
@@ -275,6 +278,7 @@
     <string name="view_contact_details">View contact details</string>
     <string name="call_from_sim_1">Call from SIM 1</string>
     <string name="call_from_sim_2">Call from SIM 2</string>
+    <string name="toggle_filename">Perjungti bylos pavadinimo matomumą</string>
 
     <!-- Sorting -->
     <string name="sort_by">Rūšiuoti pagal</string>
@@ -507,6 +511,8 @@
     <string name="your_sounds">Jūsų garsai</string>
     <string name="add_new_sound">Pridėti naują garsą</string>
     <string name="no_sound">Nėra garso</string>
+    <string name="during_day_at_hh_mm">During the day at hh:mm</string>
+    <string name="during_day_at">During the day at %02d:%02d</string>
 
     <!-- Settings -->
     <string name="settings">Nustatymai</string>

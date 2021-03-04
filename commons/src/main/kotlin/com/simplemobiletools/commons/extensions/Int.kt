@@ -7,11 +7,11 @@ import android.media.ExifInterface
 import android.text.format.DateFormat
 import android.text.format.DateUtils
 import android.text.format.Time
+import com.simplemobiletools.commons.helpers.DARK_GREY
 import java.text.DecimalFormat
 import java.util.*
 
 fun Int.getContrastColor(): Int {
-    val DARK_GREY = 0xFF333333.toInt()
     val y = (299 * Color.red(this) + 587 * Color.green(this) + 114 * Color.blue(this)) / 1000
     return if (y >= 149 && this != Color.BLACK) DARK_GREY else Color.WHITE
 }
@@ -62,7 +62,7 @@ fun Int.formatDate(context: Context, dateFormat: String? = null, timeFormat: Str
 }
 
 // if the given date is today, we show only the time. Else we show the date and optionally the time too
-fun Int.formatDateOrTime(context: Context, hideTimeAtOtherDays: Boolean): String {
+fun Int.formatDateOrTime(context: Context, hideTimeAtOtherDays: Boolean, showYearEvenIfCurrent: Boolean): String {
     val cal = Calendar.getInstance(Locale.ENGLISH)
     cal.timeInMillis = this * 1000L
 
@@ -70,7 +70,7 @@ fun Int.formatDateOrTime(context: Context, hideTimeAtOtherDays: Boolean): String
         DateFormat.format(context.getTimeFormat(), cal).toString()
     } else {
         var format = context.baseConfig.dateFormat
-        if (isThisYear()) {
+        if (!showYearEvenIfCurrent && isThisYear()) {
             format = format.replace("y", "").trim().trim('-').trim('.').trim('/')
         }
 
@@ -93,11 +93,11 @@ fun Int.isThisYear(): Boolean {
 }
 
 fun Int.addBitIf(add: Boolean, bit: Int) =
-        if (add) {
-            addBit(bit)
-        } else {
-            removeBit(bit)
-        }
+    if (add) {
+        addBit(bit)
+    } else {
+        removeBit(bit)
+    }
 
 // TODO: how to do "bits & ~bit" in kotlin?
 fun Int.removeBit(bit: Int) = addBit(bit) - bit
@@ -110,10 +110,8 @@ fun ClosedRange<Int>.random() = Random().nextInt(endInclusive - start) + start
 
 // taken from https://stackoverflow.com/a/40964456/1967672
 fun Int.darkenColor(): Int {
-    if (this == Color.WHITE) {
-        return -2105377
-    } else if (this == Color.BLACK) {
-        return Color.BLACK
+    if (this == Color.WHITE || this == Color.BLACK) {
+        return this
     }
 
     val DARK_FACTOR = 8
@@ -172,9 +170,9 @@ fun Int.ensureTwoDigits(): String {
 
 fun Int.getColorStateList(): ColorStateList {
     val states = arrayOf(intArrayOf(android.R.attr.state_enabled),
-            intArrayOf(-android.R.attr.state_enabled),
-            intArrayOf(-android.R.attr.state_checked),
-            intArrayOf(android.R.attr.state_pressed)
+        intArrayOf(-android.R.attr.state_enabled),
+        intArrayOf(-android.R.attr.state_checked),
+        intArrayOf(android.R.attr.state_pressed)
     )
     val colors = intArrayOf(this, this, this, this)
     return ColorStateList(states, colors)

@@ -213,6 +213,8 @@
     <string name="background_color">Achtergrondkleur</string>
     <string name="text_color">Tekstkleur</string>
     <string name="primary_color">Primaire kleur</string>
+    <string name="accent_color_white">Accent voor wit thema</string>
+    <string name="accent_color_black_and_white">Accent voor zwart-wit thema</string>
     <string name="foreground_color">Kleur voorgrond</string>
     <string name="app_icon_color">Kleur app-icoon</string>
     <string name="bottom_navigation_bar_color">Kleur navigatiebalk onder aan het scherm</string>
@@ -243,6 +245,7 @@
     <string name="dark_theme">Donker</string>
     <string name="solarized">Overbelicht</string>
     <string name="dark_red">Donkerrood</string>
+    <string name="white">Wit</string>
     <string name="black_white">Zwart-wit</string>
     <string name="custom">Aangepast</string>
     <string name="shared">Gedeeld</string>
@@ -275,6 +278,7 @@
     <string name="view_contact_details">Contactgegevens</string>
     <string name="call_from_sim_1">Met SIM 1 bellen</string>
     <string name="call_from_sim_2">Met SIM 2 bellen</string>
+    <string name="toggle_filename">Bestandsnamen tonen</string>
 
     <!-- Sorting -->
     <string name="sort_by">Sorteren op</string>
@@ -483,6 +487,8 @@
     <string name="your_sounds">Eigen geluiden</string>
     <string name="add_new_sound">Nieuw geluid toevoegen</string>
     <string name="no_sound">Geen geluid</string>
+    <string name="during_day_at_hh_mm">Overdag om uu:mm</string>
+    <string name="during_day_at">Overdag om %02d.%02du</string>
 
     <!-- Settings -->
     <string name="settings">Instellingen</string>

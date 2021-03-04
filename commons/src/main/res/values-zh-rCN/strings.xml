@@ -210,6 +210,8 @@
     <string name="background_color">背景色</string>
     <string name="text_color">文本颜色</string>
     <string name="primary_color">主体色</string>
+    <string name="accent_color_white">Accent color of white theme</string>
+    <string name="accent_color_black_and_white">Accent color of Black &amp; White theme</string>
     <string name="foreground_color">前景色</string>
     <string name="app_icon_color">应用图标颜色</string>
     <string name="bottom_navigation_bar_color">底部导航栏颜色</string>
@@ -240,6 +242,7 @@
     <string name="dark_theme">深色主题</string>
     <string name="solarized">Solarized</string>
     <string name="dark_red">深红</string>
+    <string name="white">White</string>
     <string name="black_white">黑白</string>
     <string name="custom">自定义</string>
     <string name="shared">共享</string>
@@ -272,6 +275,7 @@
     <string name="view_contact_details">查看联系人详情</string>
     <string name="call_from_sim_1">来自 SIM 1 的通话</string>
     <string name="call_from_sim_2">来自 SIM 2 的通话</string>
+    <string name="toggle_filename">显示文件名</string>
 
     <!-- Sorting -->
     <string name="sort_by">排序方式</string>
@@ -451,6 +455,8 @@
     <string name="your_sounds">您的铃声</string>
     <string name="add_new_sound">添加新的铃声</string>
     <string name="no_sound">无铃声</string>
+    <string name="during_day_at_hh_mm">During the day at hh:mm</string>
+    <string name="during_day_at">During the day at %02d:%02d</string>
 
     <!-- Settings -->
     <string name="settings">设置</string>

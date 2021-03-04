@@ -213,6 +213,8 @@
     <string name="background_color">Χρώμα φόντου</string>
     <string name="text_color">Χρώμα κειμένου</string>
     <string name="primary_color">Πρωτεύον χρώμα</string>
+    <string name="accent_color_white">Χρώμα έμφασης Λευκού θέματος</string>
+    <string name="accent_color_black_and_white">Χρώμα έμφασης του Μαύρου &amp; Λευκού θέματος</string>
     <string name="foreground_color">Χρώμα προσκηνίου</string>
     <string name="app_icon_color">Χρώμα εικονιδίου εφαρμογής</string>
     <string name="bottom_navigation_bar_color">Χρώμα κάτω γραμμής Πλοήγησης</string>
@@ -243,6 +245,7 @@
     <string name="dark_theme">Σκούρο</string>
     <string name="solarized">Solarized</string>
     <string name="dark_red">Σκούρο κόκκινο</string>
+    <string name="white">Άσπρο</string>
     <string name="black_white">Μαύρο &amp; Άσπρο</string>
     <string name="custom">Προσαρμογή</string>
     <string name="shared">Κοινόχρηστο</string>
@@ -273,8 +276,9 @@
     <string name="create_shortcut">Δημιουργία συντόμευσης</string>
     <string name="add_number_to_contact">Προσθήκη αριθμού επαφής</string>
     <string name="view_contact_details">Προβολή λεπτομερειών επαφής</string>
-    <string name="call_from_sim_1">Call from SIM 1</string>
-    <string name="call_from_sim_2">Call from SIM 2</string>
+    <string name="call_from_sim_1">Κλήση απο SIM 1</string>
+    <string name="call_from_sim_2">Κλήση απο SIM 2</string>
+    <string name="toggle_filename">Αλλαγή προβολής ονόματος αρχείων</string>
 
     <!-- Sorting -->
     <string name="sort_by">Ταξινόμηση κατά</string>
@@ -483,6 +487,8 @@
     <string name="your_sounds">Οι ήχοι σας</string>
     <string name="add_new_sound">Προσθέστε νέο ήχο</string>
     <string name="no_sound">Χωρίς ήχο</string>
+    <string name="during_day_at_hh_mm">Κατά τη διάρκεια της ημέρας στις hh:mm</string>
+    <string name="during_day_at">Κατά τη διάρκεια της ημέρας στις %02d:%02d</string>
 
     <!-- Settings -->
     <string name="settings">Ρυθμίσεις</string>
@@ -490,7 +496,7 @@
     <string name="customize_colors">Προσαρμογή χρωμάτων</string>
     <string name="customize_colors_locked">Προσαρμογή χρωμάτων (Κλειδωμένο)</string>
     <string name="customize_widget_colors">Προσαρμογή χρωμάτων widget</string>
-    <string name="customize_notifications">Customize notifications</string>
+    <string name="customize_notifications">Προσαρμογή ειδοποιήσεων</string>
     <string name="use_english_language">Χρήση γλώσσας English</string>
     <string name="show_hidden_items">Εμφάνιση κρυφών στοιχείων</string>
     <string name="font_size">Μέγεθος κειμένου</string>
@@ -522,7 +528,7 @@
     <string name="settings_exported_successfully">Επιτυχής εξαγωγή ρυθμίσεων</string>
     <string name="settings_imported_successfully">Επιτυχής εισαγωγή ρυθμίσεων</string>
     <string name="start_name_with_surname">Εμφάνιση πρώτα το επώνυμο</string>
-    <string name="clear_cache">Clear cache</string>
+    <string name="clear_cache">Καθαρισμός cache</string>
 
     <!-- Setting sections -->
     <string name="visibility">Προβολή</string>

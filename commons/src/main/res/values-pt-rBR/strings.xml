@@ -213,6 +213,8 @@
     <string name="background_color">Cor de fundo</string>
     <string name="text_color">Cor do texto</string>
     <string name="primary_color">Cor primária</string>
+    <string name="accent_color_white">Accent color of white theme</string>
+    <string name="accent_color_black_and_white">Accent color of Black &amp; White theme</string>
     <string name="foreground_color">Cor do primeiro plano</string>
     <string name="app_icon_color">Cor do ícone do aplicativo</string>
     <string name="bottom_navigation_bar_color">Cor da barra de navegação inferior</string>
@@ -243,6 +245,7 @@
     <string name="dark_theme">Escuro</string>
     <string name="solarized">Ensolarado</string>
     <string name="dark_red">Vermelho Escuro</string>
+    <string name="white">White</string>
     <string name="black_white">Preto &amp; branco</string>
     <string name="custom">Personalizado</string>
     <string name="shared">Compartilhado</string>
@@ -275,6 +278,7 @@
     <string name="view_contact_details">View contact details</string>
     <string name="call_from_sim_1">Call from SIM 1</string>
     <string name="call_from_sim_2">Call from SIM 2</string>
+    <string name="toggle_filename">Exibir/ocultar nome do arquivo</string>
 
     <!-- Sorting -->
     <string name="sort_by">Ordenar por</string>
@@ -483,6 +487,8 @@
     <string name="your_sounds">Seus sons</string>
     <string name="add_new_sound">Adicionar um novo som</string>
     <string name="no_sound">Sem som</string>
+    <string name="during_day_at_hh_mm">During the day at hh:mm</string>
+    <string name="during_day_at">During the day at %02d:%02d</string>
 
     <!-- Settings -->
     <string name="settings">Configurações</string>

@@ -213,6 +213,8 @@
     <string name="background_color">Колір фону</string>
     <string name="text_color">Колір тексту</string>
     <string name="primary_color">Первинний колір</string>
+    <string name="accent_color_white">Accent color of white theme</string>
+    <string name="accent_color_black_and_white">Accent color of Black &amp; White theme</string>
     <string name="foreground_color">Колір переднього плану</string>
     <string name="app_icon_color">Колір піктограми додатка</string>
     <string name="bottom_navigation_bar_color">Колір нижньої навігаційної панелі</string>
@@ -243,6 +245,7 @@
     <string name="dark_theme">Темна</string>
     <string name="solarized">Солярис</string>
     <string name="dark_red">Темно-червоний</string>
+    <string name="white">White</string>
     <string name="black_white">Чорний &amp; Білий</string>
     <string name="custom">Користувацька</string>
     <string name="shared">Загальна</string>
@@ -275,6 +278,7 @@
     <string name="view_contact_details">View contact details</string>
     <string name="call_from_sim_1">Call from SIM 1</string>
     <string name="call_from_sim_2">Call from SIM 2</string>
+    <string name="toggle_filename">Перемкнути відображення імені файлу</string>
 
     <!-- Sorting -->
     <string name="sort_by">Сортувати за</string>
@@ -483,6 +487,8 @@
     <string name="your_sounds">Ваші звуки</string>
     <string name="add_new_sound">Додати новий звук</string>
     <string name="no_sound">Без звуку</string>
+    <string name="during_day_at_hh_mm">During the day at hh:mm</string>
+    <string name="during_day_at">During the day at %02d:%02d</string>
 
     <!-- Settings -->
     <string name="settings">Налаштування</string>

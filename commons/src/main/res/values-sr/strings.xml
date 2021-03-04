@@ -212,6 +212,8 @@
     <string name="background_color">Боја позадине</string>
     <string name="text_color">Боја текста</string>
     <string name="primary_color">Главна боја</string>
+    <string name="accent_color_white">Accent color of white theme</string>
+    <string name="accent_color_black_and_white">Accent color of Black &amp; White theme</string>
     <string name="foreground_color">Позадинска боја</string>
     <string name="app_icon_color">Боја иконе апликације</string>
     <string name="bottom_navigation_bar_color">Боја доње навигационе линије</string>
@@ -242,6 +244,7 @@
     <string name="dark_theme">Тамна</string>
     <string name="solarized">Осветљена</string>
     <string name="dark_red">Тамно црвена</string>
+    <string name="white">White</string>
     <string name="black_white">Црно &amp; Бела</string>
     <string name="custom">Прилагођена</string>
     <string name="shared">Дељена</string>
@@ -274,6 +277,7 @@
     <string name="view_contact_details">View contact details</string>
     <string name="call_from_sim_1">Call from SIM 1</string>
     <string name="call_from_sim_2">Call from SIM 2</string>
+    <string name="toggle_filename">Измени видљивост датотеке</string>
 
     <!-- Sorting -->
     <string name="sort_by">Сортирај према</string>
@@ -482,6 +486,8 @@
     <string name="your_sounds">Ваши звукови</string>
     <string name="add_new_sound">Додај нови звук</string>
     <string name="no_sound">Без звука</string>
+    <string name="during_day_at_hh_mm">During the day at hh:mm</string>
+    <string name="during_day_at">During the day at %02d:%02d</string>
 
     <!-- Settings -->
     <string name="settings">Подешавања</string>
